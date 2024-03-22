@@ -31,10 +31,6 @@ def get_num_characters(text):
         elif character not in character_dictionary and character.isalpha(): 
             character_dictionary[character] = 1
 
-    for i in character_dictionary:
-        list_of_characters.append(i)
-        list_of_characters.append(character_dictionary[i])
-
     print (list_of_characters)
 
 
