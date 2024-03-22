@@ -5,7 +5,8 @@ def main():
     print(f"{num_words} words found in the document")
     get_num_characters(text)
 
-
+def sort_on(dict):
+    return dict["num"]
 
 def get_num_words(text):
     words = text.split()
@@ -18,17 +19,23 @@ def get_book_text(path):
 
 def get_num_characters(text):
     lowered_string = text.lower()
-    character_list = {
+    list_of_characters = [
+
+    ]
+    character_dictionary = {
 
     }
-
     for character in lowered_string:
-        if character in character_list:
-            character_list[character] += 1
-        else: 
-            character_list[character] = 1
+        if character in character_dictionary and character.isalpha():
+            character_dictionary[character] += 1
+        elif character not in character_dictionary and character.isalpha(): 
+            character_dictionary[character] = 1
 
-    print (character_list)
+    for i in character_dictionary:
+        list_of_characters.append(i)
+        list_of_characters.append(character_dictionary[i])
+
+    print (list_of_characters)
 
 
 main()
